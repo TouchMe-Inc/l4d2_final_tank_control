@@ -10,7 +10,7 @@ public Plugin myinfo = {
 	name = "FinaleTankControl",
 	author = "Visor, Electr0",
 	description = "Setting up tank spawn in the final chapters",
-	version = "build0000",
+	version = "build0001",
 	url = "https://github.com/TouchMe-Inc/l4d2_final_tank_control"
 };
 
@@ -96,7 +96,6 @@ public Action Cmd_AddMap(int iArgs)
 
 public Action L4D2_OnChangeFinaleStage(int &iFinaleType, const char[] arg)
 {
-
 	if (!IsTankFinalType(iFinaleType)) {
 		return Plugin_Continue;
 	}
@@ -109,16 +108,16 @@ public Action L4D2_OnChangeFinaleStage(int &iFinaleType, const char[] arg)
 		{
 			if (g_iTankNumber != 1)
 			{
-				iFinaleType = FINALE_CUSTOM_PANIC;
+				iFinaleType = FINALE_HORDE_ATTACK_1;
 				return Plugin_Changed;
 			}
 		}
 
-		case TankScheme_SecondEvent,TankScheme_FlowAndSecondEvent:
+		case TankScheme_SecondEvent, TankScheme_FlowAndSecondEvent:
 		{
 			if (g_iTankNumber != 2)
 			{
-				iFinaleType = FINALE_CUSTOM_PANIC;
+				iFinaleType = FINALE_HORDE_ATTACK_1;
 				return Plugin_Changed;
 			}
 		}
